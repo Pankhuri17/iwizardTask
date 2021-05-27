@@ -1,0 +1,38 @@
+<div class="signIn">
+  <div class="card">
+    <div class="cardContent">
+      <div class="cardLeft">
+        <div class="heading">
+          <div class="headingText">Welcome to MDM</div>
+          <div class="line"></div>
+        </div>
+        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text
+        </div>
+        <div class="btn">
+          <button class="knowBtn">Know More</button>
+        </div>
+      </div>
+      <div class="cardRight">
+        <div class="signInHeading">
+          <div class="signInText">Signin</div>
+          <div class="signinLine"></div>
+        </div>
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div class="signInContent">
+                  <input type="text" placeholder="Enter Username..." formControlName="email" class="formControl"
+                    [ngClass]="{ 'is-invalid': submitted && func.email.errors }" />
+            </div>
+
+          <div class="signInContent">
+              <input type="password" placeholder="Enter Password..." formControlName="password" class="formControl"
+                [ngClass]="{ 'is-invalid': submitted && func.password.errors }" />
+          </div>
+          <div class="btn">
+            <button class="loginBtn">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

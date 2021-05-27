@@ -1,0 +1,129 @@
+@import "../../assets/styles/variables.scss";
+
+.signIn {
+  background-color: $grey;
+  height: 100vh;
+
+  .card {
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    right: 15%;
+    border-radius: 10px;
+
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    .cardContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //   height: 50vh;
+      //   width: 52vw;
+
+      .cardLeft {
+        height: 30vh;
+        width: 50%;
+        padding: 120px 100px 120px 80px;
+        text-align: left;
+        color: $white;
+        background-color: $primary;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        .heading {
+          .headingText {
+            font-size: $fontSize24;
+            font-weight: $fontWeight600;
+            margin-bottom: 8px;
+          }
+
+          .line {
+            background-color: $white;
+            height: 2.5px;
+            width: 60px;
+            margin-bottom: 50px;
+          }
+        }
+
+        .btn {
+          margin-top: 25px;
+
+          .knowBtn {
+            cursor: pointer;
+            color: $white;
+            padding: 10px 15px;
+            font-size: $fontSize14;
+            outline: none;
+            border: solid 1px $white;
+            background-color: $primary;
+            border-radius: 20px;
+
+            &:hover {
+              background-color: $white;
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .cardRight {
+        height: 30vh;
+        width: 50%;
+        padding: 120px 80px;
+        background-color: $signinBg;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        .signInHeading {
+          text-align: center;
+          margin-top: -25px;
+
+          .signInText {
+            color: $darkGrey;
+            font-size: $fontSize20;
+            font-weight: $fontWeight600;
+            margin-bottom: 10px;
+          }
+
+          .signinLine {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: $primary;
+            height: 2.5px;
+            width: 25px;
+            margin-bottom: 50px;
+          }
+        }
+
+        .signInContent {
+          margin-bottom: 50px;
+
+          .formControl {
+            width: 90%;
+            outline: none;
+            border: 0px;
+            border-bottom: solid 1px $grey;
+            padding: 5px;
+          }
+        }
+
+        .btn {
+          .loginBtn {
+            cursor: pointer;
+            color: $white;
+            width: 95%;
+            padding: 10px;
+            font-size: $fontSize14;
+            font-weight: $fontWeight500;
+            outline: none;
+            border: solid 1px $primary;
+            background-color: $primary;
+            border-radius: 20px;
+            &:hover{
+                background-color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
