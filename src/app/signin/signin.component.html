@@ -6,7 +6,7 @@
           <div class="headingText">Welcome to MDM</div>
           <div class="line"></div>
         </div>
-        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        <div class="cardText">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text
         </div>
         <div class="btn">
@@ -20,18 +20,22 @@
         </div>
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div class="signInContent">
-                  <input type="text" placeholder="Enter Username..." formControlName="email" class="formControl"
-                    [ngClass]="{ 'is-invalid': submitted && func.email.errors }" />
+                  <input type="text" placeholder="Enter Username ..." formControlName="email" class="formControl"
+                    [ngClass]="{ 'is-invalid': submitted && signin.email.errors }" />
+                    <div *ngIf="submitted && signin.email.errors" class="invalid-feedback">
+                      <div *ngIf="signin.email.errors.required">user name is required</div>
+                  </div>
             </div>
 
           <div class="signInContent">
-              <input type="password" placeholder="Enter Password..." formControlName="password" class="formControl"
-                [ngClass]="{ 'is-invalid': submitted && func.password.errors }" />
+              <input type="password" placeholder="Enter Password ..." formControlName="password" class="formControl"
+                [ngClass]="{ 'is-invalid': submitted && signin.password.errors }" />
           </div>
           <div class="btn">
-            <button class="loginBtn">LOGIN</button>
+            <button type="submit" class="loginBtn">LOGIN</button>
           </div>
         </form>
+        <!-- <div *ngIf=this.signinForm.valid>hello dolly</div> -->
       </div>
     </div>
   </div>

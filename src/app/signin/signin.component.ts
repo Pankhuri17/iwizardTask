@@ -18,22 +18,23 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.signinForm = this.formBuilder.group({
-        email: [''],
-        password: ['']
+        email: ['', Validators.required],
+        password: ['',Validators.required]
       },)
   }
 
-  get func() {return this.signinForm.controls;}
+  get signin() {return this.signinForm.controls;}
 
   onSubmit(){
     this.submitted = true;
 
     if(this.signinForm.invalid){
       return;
+    }else if(this.signinForm.valid){
+      alert("username/password incorrect");
     }
     
-    alert("username/password incorrect");
-    this.signinForm.reset();
+    // this.signinForm.reset();
   }
 
 }
