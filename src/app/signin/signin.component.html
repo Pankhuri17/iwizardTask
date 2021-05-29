@@ -21,21 +21,23 @@
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div class="signInContent">
                   <input type="text" placeholder="Enter Username ..." formControlName="email" class="formControl"
-                    [ngClass]="{ 'is-invalid': submitted && signin.email.errors }" />
-                    <div *ngIf="submitted && signin.email.errors" class="invalid-feedback">
-                      <div *ngIf="signin.email.errors.required">user name is required</div>
+                    [ngClass]="{ 'is-invalid': submitted && signinForm.controls.email.errors }" />
+                    <div *ngIf="submitted && signinForm.controls.email.errors" class="invalid-feedback">
+                      <div *ngIf="signinForm.controls.email.errors.required">user name is required</div>
                   </div>
             </div>
 
           <div class="signInContent">
               <input type="password" placeholder="Enter Password ..." formControlName="password" class="formControl"
-                [ngClass]="{ 'is-invalid': submitted && signin.password.errors }" />
+                [ngClass]="{ 'is-invalid': submitted && signinForm.controls.password.errors }" />
+                <div *ngIf="submitted && signinForm.controls.password.errors" class="invalid-feedback">
+                  <div *ngIf="signinForm.controls.password.errors.required">password is required</div>
+              </div>
           </div>
           <div class="btn">
             <button type="submit" class="loginBtn">LOGIN</button>
           </div>
         </form>
-        <!-- <div *ngIf=this.signinForm.valid>hello dolly</div> -->
       </div>
     </div>
   </div>

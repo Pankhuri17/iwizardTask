@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SigninComponent implements OnInit {
   title = 'form';
   signinForm: FormGroup;
-  submitted: any = [];
+  submitted: boolean;
 
 
   constructor(
@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.submitted = false;
     this.signinForm = this.formBuilder.group({
         email: ['', Validators.required],
         password: ['',Validators.required]
@@ -27,14 +28,11 @@ export class SigninComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-
     if(this.signinForm.invalid){
       return;
-    }else if(this.signinForm.valid){
-      alert("username/password incorrect");
     }
-    
-    // this.signinForm.reset();
+    alert("username/password incorrect");
+    this.signinForm.reset();
   }
 
 }
